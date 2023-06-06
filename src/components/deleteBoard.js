@@ -4,8 +4,13 @@ import { Context } from "../context";
 import { useNavigate } from "react-router-dom";
 
 function DeleteBoard({ platformIndex, platform }) {
-  const { deleteBoardVisible, setDeleteBoardVisible } = useContext(Context);
-  const { boards, setBoards, setPlatform } = useContext(Context);
+  const {
+    deleteBoardVisible,
+    setDeleteBoardVisible,
+    boards,
+    setBoards,
+    setPlatform,
+  } = useContext(Context);
 
   const navigate = useNavigate();
 

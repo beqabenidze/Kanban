@@ -3,9 +3,14 @@ import { Context } from "../context";
 import { useContext } from "react";
 
 function PopCheck() {
-  const { popCheckVisible, setPopCheckVisible } = useContext(Context);
-  const { deleteTaskVisible, setDeleteTaskVisible } = useContext(Context);
-  const { editTaskVisible, setEditTaskVisible } = useContext(Context);
+  const {
+    popCheckVisible,
+    setPopCheckVisible,
+    deleteTaskVisible,
+    setDeleteTaskVisible,
+    editTaskVisible,
+    setEditTaskVisible,
+  } = useContext(Context);
 
   const handleDeleteTask = () => {
     setDeleteTaskVisible(!deleteTaskVisible);

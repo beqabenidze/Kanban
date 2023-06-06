@@ -5,8 +5,8 @@ import { Context } from "../context";
 import { useForm } from "react-hook-form";
 
 function AddTask({ platformIndex }) {
-  const { addTaskVisible, setAddTaskVisible } = useContext(Context);
-  const { boards, setBoards } = useContext(Context);
+  const { addTaskVisible, setAddTaskVisible, boards, setBoards } =
+    useContext(Context);
 
   useEffect(() => {
     setValue("title", "");

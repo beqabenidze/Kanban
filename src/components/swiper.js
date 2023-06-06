@@ -1,22 +1,19 @@
 import React from "react";
 import { Context } from "../context";
 import { useContext } from "react";
-import { useState } from "react";
 
 function Swwiper({ platform }) {
-  const { navbarVisible } = useContext(Context);
-  const { mobile } = useContext(Context);
-  const { editBoardVisible, setEditBoardVisible } = useContext(Context);
-  const { checkVisible, setCheckVisible } = useContext(Context);
-  const { boards } = useContext(Context);
-
-  const { check, setCheck } = useContext(Context);
-  const { checkIndex, setCheckIndex, clickedColumn, setClickedColumn } =
-    useContext(Context);
-
-  const handleEditBoard = () => {
-    setEditBoardVisible(!editBoardVisible);
-  };
+  const {
+    navbarVisible,
+    mobile,
+    editBoardVisible,
+    setEditBoardVisible,
+    checkVisible,
+    setCheckVisible,
+    setCheck,
+    setCheckIndex,
+    setClickedColumn,
+  } = useContext(Context);
 
   return platform?.columns?.length != 0 ? (
     <div
@@ -65,7 +62,10 @@ function Swwiper({ platform }) {
         );
       })}
 
-      <div className="new-column" onClick={handleEditBoard}>
+      <div
+        className="new-column"
+        onClick={() => setEditBoardVisible(!editBoardVisible)}
+      >
         <h1>+ New Column</h1>
       </div>
     </div>

@@ -10,22 +10,19 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ platform }) {
-  const { theme, setTheme } = useContext(Context);
-  const { navbarVisible, setNavbarVisible } = useContext(Context);
-  const { addBoardVisible, setAddBoardVisible } = useContext(Context);
-  const { boards } = useContext(Context);
-  const { mobile } = useContext(Context);
+  const {
+    theme,
+    setTheme,
+    navbarVisible,
+    setNavbarVisible,
+    addBoardVisible,
+    setAddBoardVisible,
+    boards,
+    mobile,
+  } = useContext(Context);
 
   const handleTheme = () => {
     setTheme(theme == "light" ? "dark" : "light");
-  };
-
-  const handleNavbar = () => {
-    setNavbarVisible(!navbarVisible);
-  };
-
-  const handleAddBoard = () => {
-    setAddBoardVisible(!addBoardVisible);
   };
 
   return (
@@ -82,7 +79,10 @@ function Navbar({ platform }) {
                   fill="#635fc7"
                 />
               </svg>
-              <h6 onClick={handleAddBoard} id="create">
+              <h6
+                onClick={() => setAddBoardVisible(!addBoardVisible)}
+                id="create"
+              >
                 + Create New Board
               </h6>
             </div>
@@ -104,14 +104,14 @@ function Navbar({ platform }) {
           </label>
           <img src={dark}></img>
         </div>
-        <div className="hide" onClick={handleNavbar}>
+        <div className="hide" onClick={() => setNavbarVisible(!navbarVisible)}>
           <img src={hideSidebar}></img>
           <p>Hide Sidebar</p>
         </div>
       </div>
       <div
         className="show-div"
-        onClick={handleNavbar}
+        onClick={() => setNavbarVisible(!navbarVisible)}
         style={{ display: navbarVisible || mobile ? "none" : "block" }}
       >
         <img src={show}></img>

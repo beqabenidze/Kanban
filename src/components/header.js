@@ -9,30 +9,25 @@ import { Context } from "../context";
 import { useContext } from "react";
 
 function Header({ platform }) {
-  const { launchVisible, setLaunchVisible } = useContext(Context);
-  const { addTaskVisible, setAddTaskVisible } = useContext(Context);
-  const { popVisible, setPopVisible } = useContext(Context);
-
-  const { theme } = useContext(Context);
-  const { mobile } = useContext(Context);
-
-  const handleLaunch = () => {
-    setLaunchVisible(!launchVisible);
-  };
-
-  const handlePop = () => {
-    setPopVisible(!popVisible);
-  };
-
-  const handleAddTask = () => {
-    setAddTaskVisible(!addTaskVisible);
-  };
+  const {
+    launchVisible,
+    setLaunchVisible,
+    mobile,
+    theme,
+    popVisible,
+    setPopVisible,
+    addTaskVisible,
+    setAddTaskVisible,
+  } = useContext(Context);
 
   return (
     <div className="header">
       <div className="header-logo-div">
         <img src={mobile ? logo : theme == "dark" ? logoLight : logoDark}></img>
-        <div className="header-logo-div-flex" onClick={handleLaunch}>
+        <div
+          className="header-logo-div-flex"
+          onClick={() => setLaunchVisible(!launchVisible)}
+        >
           <img
             style={{
               display: mobile ? "block" : "none",
@@ -48,12 +43,12 @@ function Header({ platform }) {
           <img
             className={platform ? "plus" : "non-active-plus"}
             src={plus}
-            onClick={handleAddTask}
+            onClick={() => setAddTaskVisible(!addTaskVisible)}
           ></img>
         ) : (
           <h1
             className={platform ? "plus" : "non-active-plus"}
-            onClick={handleAddTask}
+            onClick={() => setAddTaskVisible(!addTaskVisible)}
           >
             + Add New Task
           </h1>
@@ -68,7 +63,7 @@ function Header({ platform }) {
             cursor: "pointer",
             pointerEvents: platform ? "all" : "none",
           }}
-          onClick={handlePop}
+          onClick={() => setPopVisible(!popVisible)}
         ></img>
       </div>
     </div>

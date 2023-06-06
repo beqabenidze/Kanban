@@ -5,10 +5,17 @@ import { useContext } from "react";
 import { Context } from "../context";
 
 function Check({ platformIndex }) {
-  const { popCheckVisible, setPopCheckVisible } = useContext(Context);
-  const { checkVisible, setCheckVisible } = useContext(Context);
-  const { boards, setBoards } = useContext(Context);
-  const { clickedColumn, check, checkIndex } = useContext(Context);
+  const {
+    popCheckVisible,
+    setPopCheckVisible,
+    checkVisible,
+    setCheckVisible,
+    boards,
+    setBoards,
+    clickedColumn,
+    check,
+    checkIndex,
+  } = useContext(Context);
 
   const handleCheck = () => {
     setCheckVisible(!checkVisible);

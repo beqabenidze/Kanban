@@ -3,13 +3,18 @@ import cross from "../assets/icon-cross.svg";
 import { Context } from "../context";
 import { useContext, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
 function EditTask({ platformIndex }) {
-  const { editTaskVisible, setEditTaskVisible, setCheckVisible } =
-    useContext(Context);
-  const { boards, setBoards } = useContext(Context);
-  const { check, setCheck, checkIndex, clickedColumn } = useContext(Context);
+  const {
+    editTaskVisible,
+    setEditTaskVisible,
+    setCheckVisible,
+    check,
+    checkIndex,
+    clickedColumn,
+    boards,
+    setBoards,
+  } = useContext(Context);
 
   const {
     register,

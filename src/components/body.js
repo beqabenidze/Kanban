@@ -1,7 +1,6 @@
 import React from "react";
 import { Context } from "../context";
 import { useContext } from "react";
-
 import Swwiper from "./swiper";
 
 function Body({ platform }) {

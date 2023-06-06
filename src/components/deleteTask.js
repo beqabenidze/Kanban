@@ -3,10 +3,16 @@ import { Context } from "../context";
 import { useContext } from "react";
 
 function DeleteTask({ platformIndex }) {
-  const { deleteTaskVisible, setDeleteTaskVisible, setCheckVisible } =
-    useContext(Context);
-  const { boards, setBoards, clickedColumn, check, checkIndex } =
-    useContext(Context);
+  const {
+    deleteTaskVisible,
+    setDeleteTaskVisible,
+    setCheckVisible,
+    boards,
+    setBoards,
+    clickedColumn,
+    check,
+    checkIndex,
+  } = useContext(Context);
 
   const handleDeleteTask = () => {
     setDeleteTaskVisible(false);

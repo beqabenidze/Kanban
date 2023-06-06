@@ -3,9 +3,14 @@ import { Context } from "../context";
 import { useContext } from "react";
 
 function Pop() {
-  const { deleteBoardVisible, setDeleteBoardVisible } = useContext(Context);
-  const { editBoardVisible, setEditBoardVisible } = useContext(Context);
-  const { popVisible, setPopVisible } = useContext(Context);
+  const {
+    deleteBoardVisible,
+    setDeleteBoardVisible,
+    editBoardVisible,
+    setEditBoardVisible,
+    popVisible,
+    setPopVisible,
+  } = useContext(Context);
 
   const handleDeleteBoard = () => {
     setDeleteBoardVisible(!deleteBoardVisible);

@@ -6,28 +6,26 @@ import dark from "../assets/icon-dark-theme.svg";
 import { Link } from "react-router-dom";
 
 function Launch({ platform }) {
-  const { launchVisible, setLaunchVisible } = useContext(Context);
-  const { addBoardVisible, setAddBoardVisible } = useContext(Context);
-  const { navbarVisible } = useContext(Context);
-  const { theme, setTheme } = useContext(Context);
-  const { mobile, boards } = useContext(Context);
-
-  const handleLaunch = () => {
-    setLaunchVisible(!launchVisible);
-  };
+  const {
+    launchVisible,
+    setLaunchVisible,
+    addBoardVisible,
+    setAddBoardVisible,
+    navbarVisible,
+    theme,
+    setTheme,
+    mobile,
+    boards,
+  } = useContext(Context);
 
   const handleTheme = () => {
     setTheme(theme == "dark" ? "light" : "dark");
   };
 
-  const handleAddBoard = () => {
-    setAddBoardVisible(!addBoardVisible);
-  };
-
   return (
     <div
       className="overlay-launch"
-      onClick={handleLaunch}
+      onClick={() => setLaunchVisible(!launchVisible)}
       style={{
         display:
           (launchVisible && mobile) ||
@@ -89,7 +87,10 @@ function Launch({ platform }) {
                 fill="#635fc7"
               />
             </svg>
-            <h6 onClick={handleAddBoard} id="create">
+            <h6
+              onClick={() => setAddBoardVisible(!addBoardVisible)}
+              id="create"
+            >
               + Create New Board
             </h6>
           </div>

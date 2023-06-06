@@ -6,8 +6,13 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 function EditBoard({ platformIndex }) {
-  const { editBoardVisible, setEditBoardVisible } = useContext(Context);
-  const { boards, setBoards, setPlatform } = useContext(Context);
+  const {
+    editBoardVisible,
+    setEditBoardVisible,
+    boards,
+    setBoards,
+    setPlatform,
+  } = useContext(Context);
 
   const navigate = useNavigate();
 

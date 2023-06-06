@@ -7,9 +7,13 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 function AddBoard() {
-  const { addBoardVisible, setAddBoardVisible } = useContext(Context);
-  const { boards, setBoards } = useContext(Context);
-  const { platform, setPlatform } = useContext(Context);
+  const {
+    addBoardVisible,
+    setAddBoardVisible,
+    boards,
+    setBoards,
+    setPlatform,
+  } = useContext(Context);
 
   const navigate = useNavigate();
 
