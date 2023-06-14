@@ -4,7 +4,6 @@ import { Context } from "./context";
 import Home from "./pages/home";
 import Add from "./pages/add";
 import useLocalStorage from "use-local-storage";
-import Header from "./components/header";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");

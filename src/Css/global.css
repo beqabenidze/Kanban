@@ -340,7 +340,7 @@ button {
   width: 90%;
   max-width: 500px;
   border-radius: 10px;
-  color: #fff !important;
+  color: var(--h1);
   transition: background-color 1s ease;
   background-color: var(--card-background);
 }
@@ -369,7 +369,7 @@ input[type="text"] {
   padding: 0 10px;
   width: 100%;
   outline: none;
-  color: #fff;
+  color: var(--h1);
 }
 input:focus {
   border: 0.1em solid #635fc7;
@@ -400,7 +400,7 @@ span {
   max-width: 500px;
   max-height: 98vh;
   border-radius: 10px;
-  color: #fff !important;
+  color: var(--h1);
   transition: background-color 1s ease;
   background-color: var(--card-background);
 }
@@ -444,7 +444,7 @@ option {
   width: 90%;
   max-width: 500px;
   border-radius: 10px;
-  color: #fff !important;
+  color: var(--h1);
   transition: background-color 1s ease;
   background-color: var(--card-background);
 }
